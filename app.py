@@ -266,7 +266,12 @@ def export_csv():
                     headers={"Content-Disposition": "attachment; filename=expenses.csv"})
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # use Render's PORT or default to 5000 locally
+    app.run(host="0.0.0.0", port=port, debug=True)
+
 
 from datetime import datetime
 
@@ -276,3 +281,4 @@ def datetimeformat(value):
         return datetime.strptime(value, "%Y-%m-%d").strftime("%d/%m/%Y")
     except:
         return value  # fallback in case format is unexpected
+    
