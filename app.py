@@ -86,9 +86,13 @@ def home():
         background-color: #f2f6fc;
     }
     @media (max-width: 600px) {
-        body {
-            padding: 10px;
-        }
+    form input, form select, form button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 
         input, select, button {
             width: 100%;
