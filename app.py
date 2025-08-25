@@ -198,15 +198,16 @@ def home():
             <td>{{ expense[4] }}</td>
             <td>
                 <a href="/edit/{{ expense[0] }}" style="text-decoration:none;">
-                    <button style="background:none; border:none; cursor:pointer; font-size:18px; color:#2563EB;">
+                    <button class="icon-btn edit" type="button">
                         <i class="fa-solid fa-pen"></i>
                     </button>
                 </a>
                 <form action="/delete/{{ expense[0] }}" method="POST" style="display:inline;">
-                    <button style="background:none; border:none; cursor:pointer; font-size:18px; color:#DC2626;">
+                    <button class="icon-btn delete" type="submit">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
+
             </td>
         </tr>
         {% endfor %}
@@ -309,11 +310,3 @@ if __name__ == "__main__":
 
 
 from datetime import datetime
-
-@app.template_filter('datetimeformat')
-def datetimeformat(value):
-    try:
-        return datetime.strptime(value, "%Y-%m-%d").strftime("%d/%m/%Y")
-    except:
-        return value  # fallback in case format is unexpected
-    
