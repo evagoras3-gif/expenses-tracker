@@ -45,19 +45,18 @@ def home():
     .icon-btn {
     background: none;
     border: none;
-    cursor: pointer;
-    font-size: 18px;
     padding: 0;
-    outline: none;   /* removes the blue focus outline */
-    }
+    margin: 0;
+    cursor: pointer;
+    color: #dc2626; /* red for delete */
+    font-size: 18px;
+}
 
-    .icon-btn.delete {
-        color: #DC2626; /* red */
-    }
+.icon-btn:hover {
+    color: #b91c1c; /* darker red on hover */
+}
 
-    .icon-btn.delete:hover {
-        color: #B91C1C; /* darker red on hover */
-    }
+                                  
 
     h1, h2 {
         text-align: center;
