@@ -41,6 +41,24 @@ def home():
         padding: 20px;
         background-color: #f0f4fa;
     }
+
+    .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    outline: none;   /* removes the blue focus outline */
+    }
+
+    .icon-btn.delete {
+        color: #DC2626; /* red */
+    }
+
+    .icon-btn.delete:hover {
+        color: #B91C1C; /* darker red on hover */
+    }
+
     h1, h2 {
         text-align: center;
         color: #1E3A8A; /* dark blue */
@@ -203,11 +221,11 @@ def home():
                     </button>
                 </a>
                 <form action="/delete/{{ expense[0] }}" method="POST" style="display:inline;">
-                    <button class="icon-btn delete" type="submit">
+                    <button type="submit" class="icon-btn delete">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
-
+                                  
             </td>
         </tr>
         {% endfor %}
