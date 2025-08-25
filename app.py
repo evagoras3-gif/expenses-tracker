@@ -30,6 +30,7 @@ def home():
 
     return render_template_string("""
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
 
@@ -84,8 +85,38 @@ def home():
     tr:nth-child(even) {
         background-color: #f2f6fc;
     }
-        </style>
-    </head>
+    @media (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+
+        input, select, button {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form > * {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th, table td {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        #sortDirSelect {
+            display: inline !important;
+            width: 100%;
+        }
+    }
+
+    </style>
+</head>
 
     <h1>Expense Tracker</h1>
 
