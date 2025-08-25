@@ -52,7 +52,7 @@ def home():
     }
 
     .icon-btn.delete {
-        color: #DC2626; /* red */
+        color: #BF0000; /* red */
     }
 
     .icon-btn.delete:hover {
