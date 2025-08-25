@@ -42,7 +42,22 @@ def home():
         background-color: #f0f4fa;
     }
 
-                                  
+    .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    outline: none;   /* removes the blue focus outline */
+    }
+
+    .icon-btn.delete {
+        color: #DC2626; /* red */
+    }
+
+    .icon-btn.delete:hover {
+        color: #B91C1C; /* darker red on hover */
+    }
 
     h1, h2 {
         text-align: center;
