@@ -136,6 +136,11 @@ def home():
         }
     }
 
+                                  .icon-btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
     </style>
 </head>
 
