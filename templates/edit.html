@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Expense</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f4fa;
+        }
+        h1 {
+            text-align: center;
+            color: #1E3A8A;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #1E3A8A;
+        }
+        input, select {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+        button {
+            background-color: #2563EB; /* blue */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1D4ED8; /* darker blue */
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2563EB;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Expense</h1>
+    <div class="card">
+        <form method="POST">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="{{ expense[1] }}" required>
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" step="0.01" value="{{ expense[2] }}" required>
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="Food" {% if expense[3] == "Food" %}selected{% endif %}>Food</option>
+                <option value="Transport" {% if expense[3] == "Transport" %}selected{% endif %}>Transport</option>
+                <option value="Entertainment" {% if expense[3] == "Entertainment" %}selected{% endif %}>Entertainment</option>
+                <option value="Other" {% if expense[3] == "Other" %}selected{% endif %}>Other</option>
+            </select>
+
+            <button type="submit"><i class="fa-solid fa-save"></i> Save Changes</button>
+        </form>
+        <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </div>
+</body>
+</html>
