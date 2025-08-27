@@ -1,3 +1,4 @@
+import sqlite3
 from flask import Flask, request, redirect, url_for, render_template_string, Response
 from database import init_db
 import expenses
@@ -268,6 +269,9 @@ def delete(expense_id):
 
 @app.route("/edit/<int:expense_id>", methods=["GET","POST"])
 def edit(expense_id):
+    conn = sqlite3.connect("expenses.db")
+    c = conn.cursor()
+
     if request.method=="POST":
         vendor = request.form["vendor"]
         date = request.form["date"]
